@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Naman Pal's Profile Website</title>
     <style>
         body {
@@ -10,152 +11,368 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #1c2e4a;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
             color: #FFFFF0;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .section-box {
-            background-color: #152238;
+            background-color: #1F2C4C;
             border-radius: 10px;
             margin-bottom: 20px;
             padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        header {
+
+        .section-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+
+        header, footer {
+            background-color: #000;
+            padding: 10px 20px;
+            width: 100%;
             text-align: center;
-            margin-bottom: 40px;
+            color: #FAC898;
         }
+
         h1 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+            margin: 10px 0;
+            font-size: 2rem;
         }
-        section {
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+
         h2 {
             color: #FAC898;
             margin-top: 0;
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
+
         ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
         li {
             margin-bottom: 10px;
+            flex: 1 1 45%;
+            background: #30425E;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
         }
-        footer {
-            background-color: #152238;
-            color: #FAC898;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer p {
-            margin: 0;
-        }
+
         a {
             color: #FAC898;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         a:hover {
             color: #FFFFF0;
         }
-        .nav-links {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .nav-links a {
-            margin-right: 20px;
-            color: #FAC898;
-            text-decoration: none;
-        }
-        .nav-links a:hover {
-            color: #FFFFF0;
-        }
-		.education-content {
-            display: flex;
-            align-items: center;
+
+        .smaller-font {
+            font-size: smaller;
+            color: #d3d3d3;
         }
 
-        .education-logo {
-            height: 10em; 
-            margin-right: 10px; /* Adjust margin as needed */
+        .nav-links a {
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        .nav-links a:hover {
+            background-color: #FAC898;
+            color: #152238;
+        }
+
+        .education-content, .work-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        
+        .education-logo, .work-logo {
+            height: 10em; 
+            margin-right: 10px; 
+        }
+
+        .card {
+            position: relative;
+            background-color: #30425E;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+
+        .card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .project-details {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; 
+        }
+
+        .card {
+            flex: 1 1 calc(25% - 20px); 
+            max-width: calc(25% - 20px);
+            height: auto;
+        }
+
+        .work-item {
+            display: flex;
+            align-items: flex-start; 
+            margin-bottom: 20px;
+        }
+
+        .work-logo {
+            max-width: 150px; 
+            height: auto; 
+            margin-right: 20px; 
+        }
+
+        .work-details {
+            flex: 1; 
+        }
+
+        .work-details h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.6rem; 
+            color: #FAC898; 
+        }
+
+        .work-details p {
+            margin: 5px 0;
+            font-size: 1rem; 
+            color: #d3d3d3; 
+        }
+
+        .work-details ul {
+            padding-left: 20px; 
+            margin: 5px 0; 
+        }
+
+        .work-details li {
+            margin-bottom: 5px;
+            color: #FFFFF0;
+            font-size: 0.9rem; 
+        }
+
+        @media (max-width: 768px) {
+            .work-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+    
+            .work-logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        
     </style>
 </head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var projectImage = document.querySelector(".project-image");
+      var overlay = projectImage.querySelector(".overlay");
+
+      projectImage.addEventListener("mouseenter", function() {
+        overlay.style.display = "flex";
+      });
+
+      projectImage.addEventListener("mouseleave", function() {
+        overlay.style.display = "none";
+      });
+    });
+</script>
+
 <body>
     <header>
-        <h1>Welcome to Naman Pal's Profile Website</h1>
+        <h1>Naman Pal's Profile</h1>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#education">Education</a>
-            <a href="#it-support">Professional IT Support Experience</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
+            <a href="https://naman-pal.github.io/aboutme/blog.html">Blogs</a>
         </div>
     </header>
 
     <div class="container">
         <section id="about" class="section-box">
             <h2>About Me</h2>
-            <p>Hello! I'm Naman Pal, a recent Humber College graduate with a passion for technology and a drive to learn and grow in the field of IT. During my time at Humber, I focused on PowerShell and Bash scripting, OOP, and Networking. I am enthusiastic about leveraging my skills and knowledge to contribute to innovative projects and solve real-world problems.</p>
+            <p>Hello! I'm Naman Pal, a Tech Savvy Computer Engineering graduate from Humber with extensive customer service experience. I like helping people (I know it sounds cliche, but I really do :). In my current role at the Humber Front Desk, I get joy out of helping every single person coming my way. <br>
+            In my downtime, I like to research new technologies and work on fun small tech projects (some are on my GitHub). <br>
+            Working in IT will allow me to do both! Hence my interest in Help Desk/IT support. </p>
+            <p>I am also an innate leader. I have taken on leadership roles as the captain of my high school chess team, the leader of my IT project team, and as the Student Body President (Head Boy) of my high school. In college, I served as the Executive (leader) of the Chess Club, the founder and president of the Humber Bollywood Club, and the Vice President of FC Banter, an intramural soccer team. I have many stories from each of these roles, and I plan to share them in future blog posts (should my schedule allow). </p>
+            <p>I regularly play soccer with the Humber Drop In sports community on the Humberwood soccer fields. I love music. I am primarily a vocalist, and play guitar, flute, drum kit, and piano. I am also a science buff (I have the periodic table memorized upto Zinc), and I love Math!</p>
+
+
+            <div class="nav-links">
+                Check out my <a href="#contact">Resume Here!</a>
+            </div>
         </section>
 
+       
         <section id="education" class="section-box">
-			<h2>Education</h2>
-			<div class="education-content">
-				<img src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Humber.jpg" alt="Humber College Logo" class="education-logo">
-				<img src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Humber.jpg" alt="Humber College Logo" class="education-logo">
-				<ul>
-					<li>Computer Engineering, Humber College<br>
-						Graduated: Dec, 2023</li>
-				</ul>
-			</div>
-		</section>
+            <h2>Education</h2>
+            <div class="work-content">
+                <div class="work-item">
+                    <img src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Humber.jpg" alt="Humber College Logo" class="work-logo">
+                    <div class="work-details">
+                        <h3>Computer Engineering (Technology)</h3>
+                        <p><strong>Humber College, Toronto, ON</strong></p>
+                        <p>Jan 2021 - Dec 2023</p>
+                        <p class="responsibilities">
+                            Had the time of my life. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <section id="it-support" class="section-box">
-            <h2>Professional IT Support Experience</h2>
-            <ul>
-                <li>
-                    <strong>IT Technician, Wet'n'Wild Toronto</strong><br>
-                    Duration: May 2023 - Sept 2023<br>
+
+        <section id="experience" class="section-box">
+            <h2>Experience</h2>
+            <div class="work-content">
+                <div class="work-item">
+                    <img src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Humber.jpg" alt="Humber College Logo" class="work-logo">
+                    <div class="work-details">
+                        <h3>Receptionist (Front Desk)</h3>
+                        <p><strong>Humber College, Toronto, ON</strong></p>
+                        <p>Jan 2024 - Present</p>
+                        <p class="responsibilities">
+                            Manage inbound/outbound calls and 3 shared mailboxes. <br> 
+                            Provide Hotel-Style Customer Service.
+                        </p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/WnW%20logo%20icon.jpg" alt="Wet'n'Wild Logo" class="work-logo">
+                    <div class="work-details">
+                        <h3>IT Technician (Summer Job)</h3>
+                        <p><strong>Wet'n'Wild Toronto, Brampton, ON</strong></p>
+                        <p>May 2023 - Sept 2023</p>
+                        <p class="responsibilities">
+                            Communicate complex IT processes to non-technical staff and customers. <br> Create weekly reports to improve technical framework. <br> Configure and troubleshoot Printers, POS desktops, Switches, AV, and Cameras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section id="projects" class="section-box">
+            <h2>Projects</h2>
+            <ul class="projects-list">
+                <li class="card">
+                    <a href="https://github.com/PrototypeZone/computer-systems-project-biobytes/blob/main/Poster/Biobytes%20Presentation%20Poster.pdf" target="_blank">
+                        <div class="overlay"></div>
+                        <div class="project-image">
+                            <img src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/SIHMON%20Bracelet%20Prototype.jpg" alt="SIHMON Image">
+                        </div>
+                        <div class="project-details">
+                            <h3>SIHMON: Smart Infant Health MONitor</h3>
+                            <p>Project leader and Scrum Master - Naman Pal (myself)</p>
+                            <p class='smaller-font'>Python, Java, PCB Assembly, Agile CI/CD, Firebase Real-time database</p>
+                        </div>
+                    </a>
                 </li>
             </ul>
         </section>
-
+        
         <section id="skills" class="section-box">
             <h2>Skills</h2>
             <ul>
-                <li>Programming Languages: Python, Java, C, C++, PowerShell, Bash, Kotlin</li>
-                <li>Web Development: HTML, JavaScript, CSS</li>
-                <li>Databases: MS SQL, PostgreSQL</li>
-                <li>Operating Systems: Windows, Linux, Mac</li>
-                <li>Other Skills: VHDL, Verilog, TinkerCAD, Fritzing, Android Studio</li>
+                <li><b>Programming Languages:</b> Python, Java, C, C++, PowerShell, Bash, Kotlin</li>
+                <li><b>Web Development:</b> HTML, XML, JavaScript, CSS</li>
+                <li><b>Databases:</b> MS SQL, PostgreSQL, Google Firebase</li>
+                <li><b>Operating Systems:</b> Windows, Linux, Mac</li>
+                <li><b>Other Skills:</b> VHDL, Verilog, TinkerCAD, Fritzing, Android Studio</li>
+                <li><b>Non-technical:</b> Customer Experience, Front Desk, Problem Solving</li>
             </ul>
-        </section>
-
-        <section id="contact" class="section-box">
-            <h2>Contact Me</h2>
-            <p>Email: nptgshiv@gmail.com</p>
-            <p>LinkedIn: <a target="_blank" href="https://www.linkedin.com/in/n-pal/">LinkedIn Profile</a></p>
-            <p>GitHub: <a target="_blank" href="https://github.com/Naman-Pal">GitHub Profile</a></p>
         </section>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Naman Pal</p>
+    <footer id="contact" style="background-color: #1c2e4a; padding: 20px; color: #FAC898; text-align: center;">
+        <div style="margin-bottom: 20px;">
+            <a href="mailto:nptgshiv@gmail.com" title="Email" style="font-size: 24px; color: #FAC898; text-decoration: none; margin-right: 20px;"><i class="far fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/n-pal/" target="_blank" title="LinkedIn" style="font-size: 24px; color: #FAC898; text-decoration: none; margin-right: 20px;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Naman-Pal" target="_blank" title="GitHub" style="font-size: 24px; color: #FAC898; text-decoration: none;"><i class="fab fa-github"></i></a>
+        </div>
+        <p style="font-size: 18px; margin-top: 20px;">Contact: <a href="mailto:nptgshiv@gmail.com" style="color: #FAC898; text-decoration: none;">Email</a> | <a href="https://www.linkedin.com/in/n-pal/" target="_blank" style="color: #FAC898; text-decoration: none;">LinkedIn</a> | <a href="https://github.com/Naman-Pal" target="_blank" style="color: #FAC898; text-decoration: none;">GitHub</a></p>
+        <p style="font-size: 14px; margin-top: 20px;">&copy; 2024 Naman Pal</p>
     </footer>
 </body>
 </html>
