@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Naman Pal's Blogs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color: #FFFFF0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-box {
+            background-color: #152238;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+
+        header, footer {
+            background-color: #000;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: center;
+            color: #FAC898;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #FAC898;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li {
+            margin-bottom: 10px;
+            flex: 1 1 45%;
+            background: #1c2e4a;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #FAC898;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #FFFFF0;
+        }
+
+        .smaller-font {
+            font-size: smaller;
+            color: #d3d3d3;
+        }
+
+        .nav-links a {
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #FAC898;
+            color: #152238;
+        }
+
+        .education-content, .work-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        
+        .education-logo, .work-logo {
+            height: 10em; 
+            margin-right: 10px; 
+        }
+
+        .card {
+            position: relative;
+            background-color: #1c2e4a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+
+        .card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .project-details {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; 
+        }
+
+        .card {
+            flex: 1 1 calc(25% - 20px); 
+            max-width: calc(25% - 20px);
+            height: auto;
+        }
+
+        .work-item {
+            display: flex;
+            align-items: flex-start; 
+            margin-bottom: 20px;
+        }
+
+        .work-logo {
+            max-width: 150px; 
+            height: auto; 
+            margin-right: 20px; 
+        }
+
+        .work-details {
+            flex: 1; 
+        }
+
+        .work-details h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.6rem; 
+            color: #FAC898; 
+        }
+
+        .work-details p {
+            margin: 5px 0;
+            font-size: 1rem; 
+            color: #d3d3d3; 
+        }
+
+        .work-details ul {
+            padding-left: 20px; 
+            margin: 5px 0; 
+        }
+
+        .work-details li {
+            margin-bottom: 5px;
+            color: #FFFFF0;
+            font-size: 0.9rem; 
+        }
+
+        @media (max-width: 768px) {
+            .work-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+    
+            .work-logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var projectImage = document.querySelector(".project-image");
+      var overlay = projectImage.querySelector(".overlay");
+
+      projectImage.addEventListener("mouseenter", function() {
+        overlay.style.display = "flex";
+      });
+
+      projectImage.addEventListener("mouseleave", function() {
+        overlay.style.display = "none";
+      });
+    });
+</script>
+
+<body>
+    <header>
+        <h1>Computer Hardware and OS</h1>
+        <div class="nav-links">
+            <a href="file:///C:/Users/nptgs/Downloads/blog.html">Go Back</a>
+            <a href="file:///C:/Users/nptgs/Downloads/aboutme.html">Profile</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <div class="container">
+	<h3>Operating Systems</h3>
+        <article>
+            <p>An operating system is simply a program. This program interacts with software and hardware on a computer. </p>
+
+            <p>Donec fringilla malesuada mi, vel lacinia odio dictum eget. Vivamus non ex et libero lobortis convallis. Morbi auctor ligula velit, nec ultricies libero eleifend vitae. Morbi ultricies eleifend neque, non laoreet risus. Donec non sem sed elit fermentum convallis. Maecenas sem purus, mattis nec rutrum vel, efficitur at mauris. Nulla nec nunc ac orci aliquam dapibus. Curabitur ullamcorper purus vel enim ultricies malesuada. Sed nec tempus justo. Duis euismod urna vitae efficitur ullamcorper. Mauris lobortis, orci id scelerisque placerat, quam odio dictum nibh, nec vestibulum magna dolor non ante.</p>
+
+            <p>Proin eu nisl eu tellus tristique pellentesque. Phasellus dapibus erat ac arcu condimentum, sit amet fermentum elit dictum. Proin vehicula nec ipsum in consectetur. Duis et quam eget elit dapibus lacinia. Pellentesque eget justo a purus elementum ultrices. Phasellus posuere libero a purus consequat, quis ultrices felis rutrum. Morbi sed fringilla quam. Cras sed varius ligula, nec dictum eros. Nullam pretium nibh non fermentum varius. Donec elementum semper libero, at luctus nunc dictum sed. In quis sem in justo tincidunt elementum. Vivamus interdum tempus neque, a ultricies tortor posuere non. Cras convallis eleifend ligula.</p>
+        </article>
+    </div>
+    
+    <footer id="contact" style="background-color: #1c2e4a; padding: 20px; color: #FAC898; text-align: center;">
+        <div style="margin-bottom: 20px;">
+            <a href="mailto:nptgshiv@gmail.com" title="Email" style="font-size: 24px; color: #FAC898; text-decoration: none; margin-right: 20px;"><i class="far fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/n-pal/" target="_blank" title="LinkedIn" style="font-size: 24px; color: #FAC898; text-decoration: none; margin-right: 20px;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Naman-Pal" target="_blank" title="GitHub" style="font-size: 24px; color: #FAC898; text-decoration: none;"><i class="fab fa-github"></i></a>
+        </div>
+        <p style="font-size: 18px; margin-top: 20px;">Contact: <a href="mailto:nptgshiv@gmail.com" style="color: #FAC898; text-decoration: none;">Email</a> | <a href="https://www.linkedin.com/in/n-pal/" target="_blank" style="color: #FAC898; text-decoration: none;">LinkedIn</a> | <a href="https://github.com/Naman-Pal" target="_blank" style="color: #FAC898; text-decoration: none;">GitHub</a></p>
+        <p style="font-size: 14px; margin-top: 20px;">&copy; 2024 Naman Pal</p>
+    </footer>
+</body>
+</html>
