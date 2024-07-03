@@ -15,6 +15,10 @@
             color: #FFFFF0;
         }
 
+        .inline {
+            display: inline-block;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -257,7 +261,7 @@
 
 <body>
     <header>
-        <h1>Computer Hardware and OS</h1>
+        <h1>Networking Basics</h1>
         <div class="nav-links">
             <a href="https://naman-pal.github.io/aboutme/blog.html">Go Back</a>
             <a href="https://naman-pal.github.io/aboutme/">Profile</a>
@@ -266,32 +270,48 @@
     </header>
 
     <div class="container">
-	<h3>Operating Systems</h3>
-        <article>
-            <p>An operating system is simply a program. This program acts as an interface between the User (YOU) and the computer hardware. Well that's a simple enough definition, but that doesn't quench your curiosity does it? It didn't for me, so I researched, a LOT, and wrote this blog to help others like me. </p>
-			
-			<p>Let's go kindergarten on this one, what is a computer? It is a device that sends email, compiles Java programs, plays music videos, and runs GTA VI! But what part of the computer is actually doing all this awesome stuff? <br>
-			Not the keyboard. Nope, not the mouse either: these are just PERIPHERAL devices. It's actually the complicated stuff that sits INSIDE the computer. The stuff that's hidden: the HARDWARE (peripherals are NOT hardware). 
-			<ul>
-			<li>The hardware is what converts your english language email into electric signals, and sends it over a wire all the way to your colleague in a different city. 
-			<li>The Hardware is receiving electrical signals from YouTube (which is just another computer sitting far away which has the YouTube video saved in it's storage.)
-			<li>The hardware has your game saved from the last time you completed a mission (trivial for "level") in GTA VI; and it loads that saved game from computer-memory onto your monitor, which you can interact with, LIVE. 
-			</ul>
-						
-			<p>
-            You know why it's all hidden? Because we don't want to look at it (unless you are an engineer like me.) It's complicated, there's no point keeping it exposed to our naked eyes lol. I am not interacting with any of it directly anyways, just like a car engine. I am not personally spraying the diesel-air mixture into the combustion chamber, I just hit the gas pedal (accelarator) and GO! (sorry about the car lingo, I'm a motor enthusiast too!) Similarly, I just want to watch my Stand-up comedy video. I Do Not Care about what happened after I searched for 'stand-up comedy' on YouTube. I just want to click on the video and laugh!<br>
-			</p>
             <p>
-			So, when you complete a mission in GTA VI and click 'Save Game', something inside the computer sends those signals to <b>(ASKS)</b> the hardware (in this case, the hardware is memory). The signals translate to this: "Hey Memory, my boy just completed his mission, save the game so he can continue it later." And the memory (hardware) did it!<br>
-			</p>
-			<p>
-            Similarly, when the YouTube server (which is just another computer far away, which holds the youtube video in it's storage) sent you your 'stand-up comedy' video through electrical signals, something <b>ASKED</b> the hardware to turn those signals into the beautiful multicolor video on your monitor and 3D audio on your speakers which you can enjoy. 
-			</p>
-            <p>
-			Yes, we know the hardware is doing everything, but the hardware is nothing but a compli-friggin-cated circuit. I am guessing if you are still reading this whole-heartedly, then you won't be surprised by the circuit part. Everything in the hardware is aSo, we need to send it certain signals to <b></b>So everything that's going on inside, Operating System is an ABSTRACTION for it. My dear friend, that is literally it. 
-			</p>
+                For simplicity, consider this scenario: email, social media etc. don't exist, and you want to share a file with a coworker; what do you do?<br>
+                You probably copy it to a USB, plug the USB into the coworker's computer, and paste it there. 
+                3 minutes later, another file comes to you which you want to share with the same coworker. USB again? 7 minutes later, another file. You know what I'm getting at?    
+             </p>
 
-        </article>
+             <p>
+                For this reason, we need a way to communicate with other computers efficiently. With the internet being an integral part of our society now, it's hard to imagine a world without network today. But what I mentioned above is the boiled down version of why we need to connect computers (network). That's literally what a network is, connection of computers. 
+             </p>
+                
+             <p>
+                So we came up with a solution. We created computers which have a port. When we plug one end of a wire into that port and plug the other end into another computer's port, we're able to send and receive files between the computers! This port is called Ethernet-Port and the wire is... (c'mon you know it :)
+             </p>
+             
+             <p>
+                You know how Coca-Cola has a secret 'recipe' that they have preserved in their headquarters somewhere (even tho we all know it's just a brown colored, carbonated sugar solution.) Well the computer manufacturers back then were also not giving out how they made their computers with the network ports. So, for instance, Lenovo's network port looked nothing like HP's network port. Even the wires needed by different companies were different. So 2 computers from different manufacturers could NOT talk to each other. To solve this, ISO (International Organization for Standardization: ISO is not an acronym, it's a Greek word meaning 'Equal') created a standard 'recipe' to create the networking component of computers. More about ISO <a href="https://byjus.com/full-form/iso-full-form/#:~:text=The%20full%20form%20of%20ISO%20is%20the%20International%20Organization%20for,purposes%20and%20publishes%20technical%20reports.">here</a><br>
+                Thanks to ISO, today we have these big companies - HP, Lenovo, Asus, but they all communicate (network) using the same ethernet cables. Wondering how the grep my email goes through a flippin wire to another computer? Check out my blog on the TCP/IP (and OSI) model.
+             </p>
+             
+             <p>
+                Great, now 2 computers can communicate with each other. But what if a third computer wants to join the conversation? The ethernet ports on both computers are busy talking to each other (one ethernet cable is connecting the ports on both computers). Now how do we get the third one into the conversation? Do we create a new computer with 2 ethernet ports? But there's only so many ports we can engineer into a computer before we run out of space, and increase production costs of computer exponentially. So how do we make more than 2 computers talk (network)?<br>
+                This is where the 'Switch' comes in. 
+             </p>
+
+
+	<h3>What is a switch?</h3>        
+             <p>
+                Switch is a device which connects multiple computers in a network. A switch has multiple ethernet outlets (ports). You know how a multi-socket extension cord converts one power socket into many? Well swtich does exactly the same (see image below.) 
+             </p>
+             <br>
+             <span>
+             <img class="inline" src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Multi-socket%20extension%20cord.jpg" alt="Extension Cord" style="height:200px;">
+             <img class="inline" src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Network%20Switch%20Small.jpg" alt="Network Switch" style="height:200px;">
+             </span>
+             
+             <p>
+                To be fair, the switch is a little more than just a ethernet port extension. If there are 5 computers connected to same switch, the switch knows which computer sent the data, and which computer should receive it; unlike a power cord which sends the same power to each port. Want to know how does switch know where to send the data to? Check out my TCP/IP (and OSI) blog post. 
+             </p>
+
+             <p>
+                Nice, so we are able to connect multiple computers together. 
+
     </div>
     
     <footer id="contact" style="background-color: #1c2e4a; padding: 20px; color: #FAC898; text-align: center;">
