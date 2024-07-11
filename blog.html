@@ -11,8 +11,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background: linear-gradient(135deg, #a8e063, #56ab2f, #89f7fe, #66a6ff, #f6d365, #fda085);
-            /*background: linear-gradient(45deg, #00c6ff, #0072ff);*/
+            background: linear-gradient(135deg, #C4FFC0, #82E0AA, #4CAF50);
             color: #FFFFF0;
         }
 
@@ -25,8 +24,12 @@
             align-items: center;
         }
 
+        .section-box:first-of-type {
+			padding-top: 40px; 
+		}
+
         .section-box {
-            background-color: #1E90FF;
+background: linear-gradient(135deg, #35478C, #4E6CB7, #75AADB);
             border-radius: 10px;
             margin-bottom: 20px;
             padding: 20px;
@@ -40,13 +43,66 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.4);
         }
 
-        header, footer {
+        .section-box h2 {
+			color: #FAC898;
+			margin-top: 0;
+			margin-bottom: 20px;
+			font-size: 2rem;
+		}
+
+		.section-box p {
+			font-size: 1.2rem;
+			line-height: 1.8;
+			color: #FFFFF0;
+		}
+
+        .highlight {
+			font-weight: bold; 
+			color: #FFFFF4; 
+			font-size: 1.2em; 
+		}
+
+        footer {
             background-color: #000;
             padding: 10px 20px;
             width: 100%;
             text-align: center;
             color: #FAC898;
         }
+
+        header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: #000;
+			padding: 10px 20px;
+			z-index: 1000; 
+			text-align: center;
+		}
+
+        .resume-button {
+			position: absolute;
+			top: 50%;
+			right: 20%; 
+			transform: translateY(-50%);
+		}
+
+        .button {
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #FAC898;
+			color: #152238;
+			border-radius: 5px;
+			text-decoration: none;
+			font-weight: bold;
+			transition: background-color 0.3s ease, color 0.3s ease;
+		}
+		
+		.button:hover {
+			background-color: #152238;
+			color: #FAC898;
+		}
 
         h1 {
             margin: 10px 0;
@@ -118,7 +174,7 @@
 
         .card {
             position: relative;
-            background-color: #1c2e4a;
+            background: linear-gradient(135deg, #4E6B4E, #6E8F6E, #7FA37F, #4E6B4E, #598059, #759675, #3A513A, #4E6B4E, #5F7D5F, #2B432B, #3A593A, #4E6B4E);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -258,41 +314,29 @@
 
 <body>
     <header>
-        <h1>Naman Pal's Blogs</h1>
-        <div class="nav-links">
-            <a href="https://naman-pal.github.io/aboutme/">Go Back</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </header>
+		<div class="header-content">
+			<h1>Naman Pal's Blogs</h1>
+			<div class="nav-links">
+                <a href="https://naman-pal.github.io/aboutme/">Portfolio</a>
+                <a href="#contact">Contact</a>
+			</div>
+		</div>
+		<div class="resume-button">
+			<a href="https://naman-pal.github.io/aboutme/Naman%20Pal%20Resume.pdf" class="button">Resume</a>
+		</div>
+	</header>
+
+    <br><br><br><br><br><br>
 
     <div class="container">
         <section id="about" class="section-box">
             <h2>$whoami</h2>
-            <p>Hello and welcome to my Blog! I'm Naman Pal, a Tech Savvy Computer Engineering Humber Grad. Being an innate leader and mentor, I find joy in teaching/simplifying concepts for others. I will do the same through this Blog, and I hope it helps!<br>
+            <p>Hello and welcome to my Blog! I'm <span class='highlight'>Naman Pal</span>. Being an <span class='highlight'>Emerging IT Leader</span> and an innate mentor, I find joy in teaching/simplifying concepts for others. I will do the same through this Blog, and I hope it helps!<br>
             </p>
             <div class="nav-links">
                 Check out my <a href="https://naman-pal.github.io/aboutme/">Profile Here!</a>
             </div>
         </section>
-
-       <!--
-        <section id="education" class="section-box">
-            <h2>Technical Concepts</h2>
-            <div class="work-content">
-                <div class="work-item">
-                    <img src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Humber.jpg" alt="Humber College Logo" class="work-logo">
-                    <div class="work-details">
-                        <h3>Operating Systems</h3>
-                        <p>June 2024</p>
-                        <p class="responsibilities">
-                            What is OS? What does it do? <br> 
-                            I promise this is not another vague Wiki explanation. It's straightforward and sweet.  
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        -->
 
         <section id="projects" class="section-box">
             <h2>Technical Concepts</h2>
