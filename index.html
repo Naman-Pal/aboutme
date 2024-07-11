@@ -11,7 +11,8 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+			background: linear-gradient(135deg, ivory, #FFF2CC, #D9FFDB, #B2E0FF);
+/*            background: linear-gradient(135deg, #00c6ff, #0072ff); */
             color: #FFFFF0;
         }
 
@@ -48,7 +49,7 @@
 		}
 
 		.section-box {
-            background-color: #1F2C4C;
+            background-color: #333333;
             border-radius: 10px;
             margin-bottom: 20px;
             padding: 20px;
@@ -145,13 +146,6 @@
             color: #FFFFF0;
         }
 
-        .smaller-font {
-            font-size: smaller;
-            color: #d3d3d3;
-		    display: flex;
-
-        }
-
         .nav-links a {
             padding: 5px 10px;
             border-radius: 5px;
@@ -163,25 +157,14 @@
             color: #152238;
         }
 
-        .education-content, .work-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        
-        .education-logo, .work-logo {
-            height: 10em; 
-            margin-right: 10px; 
-        }
-
         .card {
             position: relative;
-            background-color: #30425E;
+            background: linear-gradient(135deg, #4c4e52, #6c6e78, #979ba6, #333b44, #4c5867, #6f8196, #202732, #333e53, #4e5d77, #141d27, #202e3f, #31475f);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+			color: #152238;
         }
 
         .card:hover {
@@ -209,6 +192,7 @@
             position: relative;
             z-index: 2;
             padding: 20px;
+            color: #FFBF00;
         }
 
         .project-image img {
@@ -228,58 +212,6 @@
             flex: 1 1 calc(25% - 20px); 
             max-width: calc(25% - 20px);
             height: auto;
-        }
-
-        .work-item {
-            display: flex;
-            align-items: flex-start; 
-            margin-bottom: 20px;
-        }
-
-        .work-logo {
-            max-width: 150px; 
-            height: auto; 
-            margin-right: 20px; 
-        }
-
-        .work-details {
-            flex: 1; 
-        }
-
-        .work-details h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.6rem; 
-            color: #FAC898; 
-        }
-
-        .work-details p {
-            margin: 5px 0;
-            font-size: 1rem; 
-            color: #d3d3d3; 
-        }
-
-        .work-details ul {
-            padding-left: 20px; 
-            margin: 5px 0; 
-        }
-
-        .work-details li {
-            margin-bottom: 5px;
-            color: #FFFFF0;
-            font-size: 0.9rem; 
-        }
-
-        @media (max-width: 768px) {
-            .work-item {
-                flex-direction: column;
-                align-items: stretch;
-            }
-    
-            .work-logo {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -357,7 +289,7 @@
                         <div class="project-details">
                             <h3>SIHMON: Smart Infant Health MONitor</h3>
                             <p>Project leader and Scrum Master - Naman Pal (myself)</p>
-                            <p class='smaller-font'>Python, Java, PCB Assembly, Agile CI/CD, Firebase Real-time database</p>
+                            <p>Python, Java, PCB Assembly, Agile CI/CD, Firebase Real-time database</p>
                         </div>
                     </a>
                 </li>
