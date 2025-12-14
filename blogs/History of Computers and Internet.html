@@ -1,23 +1,328 @@
-Internet intrigues me. It reminds me what humanity is capable of. How much we can build, do, in such a small time-frame: given we work together and have the resources to do it. 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/NPal%20Favicon.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Naman Pal's Blogs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: linear-gradient(45deg, #00c6ff, #0072ff);
+            color: #FFFFF0;
+        }
 
-Okay, philosophy aside, here's how we actually did it. In the mid-20th century, scientists and researchers needed better ways to do calculations. Because before computers humans were doing all that, increasing the likelyhood of errors, and delaying even simple projects. 
+        .inline {
+            display: inline-block;
+        }
 
-While the rest of the world was in chaos, US back then was relatively stable and had WAY more resources to fund everything. Also, chaotic world war and cold war times, they NEEDED to be ahead of the others. So that's what they did. 
-They mega funded computing machines that could reliably handle complex calculations, research, and analysis. ENIAC and UNIVAC being one of the first ever 'real' computers. They came with their own basic 'OS' and were sold to public, often interesting other public and private sectors like research, engineering, government, etc. because this would make their work SO much easier. 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-*Fun fact: Semiconductor technology, which is essential for the logic and memory elements in computers, only came out in the 60s-70s. So early computers of 40s-50s like ENIAC/UNIVAC used older logic/memory technologies like vacuum tubes, mercury delay lines/magnetic drums, which took up entire rooms. With the advent and progress of semiconductor technologies, computers became more and more efficient, and took less and less space, basically they just got better and better. We'll soon have quantum computers, which will have the power to manipulate bits, which would make the first 'real' supercomputers. 
+        .section-box {
+            background-color: #152238;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-At this point, people were already working sort of remotely. Like not from home, but sitting in different room than the actual computer. That's because these computers were too expensive to build for every single scientist to work on. So they built one per institution. And all scientists would have user accounts on the same computer. The computer was big, loud, and very expensive to maintain. So it was placed in a special, high-maintenance room, while terminals were setup in scientists' offices, connected to the mainframe via phone lines. Scientists communicated with the mainframe by using teletype, meaning, their input was converted to ASCII and sent to mainframe, and vice versa. ASCII was transmitted over phone lines using varying voltages. Back then it was all CLI. Eventually these computers 
+        .section-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
 
-Also, they literally mailed their researches to other universities/scientists, or recited their findings over those phones, you know the ones where we stick our finger in and spin it round and round, and the phone goes 'tring tring'... you get the picture.
+        header, footer {
+            background-color: #000;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: center;
+            color: #FAC898;
+        }
 
-To solve this problem, an early concept of internet was born, the 'ARPANET'. The researchers came up with a pre-historic OSI model, a big level up from sending ASCII over phone lines. They created early-routers called 'IMPs' that routed packets similar to how our routers do today. 
+        h1 {
+            margin: 10px 0;
+            font-size: 2rem;
+        }
 
-They knew just transmitting the data as serial signals over long distances (different cities) would cause data loss, and delays. Hence, they also designed hardware and software which would break down data from one computer into packets with headers so it can be routed appropriately. 
+        h2 {
+            color: #FAC898;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
 
-At first, this expensive infrastructure was only setup in 4-5 universities, so there were only 4-5 network nodes. They leased phone lines to connect the nodes in ARPANET. These universities were finally able to communicate without mailing each other papers.
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-Eventually, more and more universities were added to the ARPANET. Copying ARPANET, others, like private telecom companies, government departments, etc. also created their networks. They were all using similar hardware and software. But they had their own routing protocols. Meaning packets coming out of one network were not intelligible to others. This was soon solved when TCP/IP came out. It standardized how data was routed, so different networks could now talk with each other. Eventually, more and more nodes/small networks joined. 
+        li {
+            margin-bottom: 10px;
+            flex: 1 1 45%;
+            background: #1c2e4a;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-Point to note: these were PRIVATE networks. Meaning, even if you connected to any of these networks using a computer, you still required an account, and permissions from that network's admin to send or receive anything. TCP/IP only standardized how to send-receive raw data. Whether they actually could depended on whether they were allowed to. 
+        a {
+            color: #FAC898;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
+        a:hover {
+            color: #FFFFF0;
+        }
+
+        .smaller-font {
+            font-size: smaller;
+            color: #d3d3d3;
+        }
+
+        .nav-links a {
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #FAC898;
+            color: #152238;
+        }
+
+        .education-content, .work-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        
+        .education-logo, .work-logo {
+            height: 10em; 
+            margin-right: 10px; 
+        }
+
+        .card {
+            position: relative;
+            background-color: #1c2e4a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+
+        .card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .card:hover .overlay {
+            opacity: 1;
+        }
+
+        .project-details {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; 
+        }
+
+        .card {
+            flex: 1 1 calc(25% - 20px); 
+            max-width: calc(25% - 20px);
+            height: auto;
+        }
+
+        .work-item {
+            display: flex;
+            align-items: flex-start; 
+            margin-bottom: 20px;
+        }
+
+        .work-logo {
+            max-width: 150px; 
+            height: auto; 
+            margin-right: 20px; 
+        }
+
+        .work-details {
+            flex: 1; 
+        }
+
+        .work-details h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.6rem; 
+            color: #FAC898; 
+        }
+
+        .work-details p {
+            margin: 5px 0;
+            font-size: 1rem; 
+            color: #d3d3d3; 
+        }
+
+        .work-details ul {
+            padding-left: 20px; 
+            margin: 5px 0; 
+        }
+
+        .work-details li {
+            margin-bottom: 5px;
+            color: #FFFFF0;
+            font-size: 0.9rem; 
+        }
+
+        @media (max-width: 768px) {
+            .work-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+    
+            .work-logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var projectImage = document.querySelector(".project-image");
+      var overlay = projectImage.querySelector(".overlay");
+
+      projectImage.addEventListener("mouseenter", function() {
+        overlay.style.display = "flex";
+      });
+
+      projectImage.addEventListener("mouseleave", function() {
+        overlay.style.display = "none";
+      });
+    });
+</script>
+
+<body>
+    <header>
+        <h1>A Brief History of Computers and the Internet</h1>
+        <div class="nav-links">
+            <a href="https://naman-pal.github.io/aboutme/blog.html">Go Back</a>
+            <a href="https://naman-pal.github.io/aboutme/">Profile</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <div class="container">
+            <p>
+                For simplicity, consider this scenario: email, social media etc. don't exist, and you want to share a file with a coworker; what do you do?<br>
+                You probably copy it to a USB, plug the USB into the coworker's computer, and paste it there. 
+                3 minutes later, another file comes to you which you want to share with the same coworker. USB again? 7 minutes later, another file. You know what I'm getting at?    
+             </p>
+
+             <p>
+                For this reason, we need a way to communicate with other computers efficiently. With the internet being an integral part of our society now, it's hard to imagine a world without network today. But what I mentioned above is the boiled down version of why we need to connect computers (network). That's literally what a network is, connection of computers. 
+             </p>
+                
+             <p>
+                So we came up with a solution. We created computers which have a port. When we plug one end of a wire into that port and plug the other end into another computer's port, we're able to send and receive files between the computers! This port is called Ethernet-Port and the wire is... (c'mon you know it :)
+             </p>
+             
+             <p>
+                You know how Coca-Cola has a secret 'recipe' that they have preserved in their headquarters somewhere (even tho we all know it's just a brown colored, carbonated sugar solution.) Well the computer manufacturers back then were also not giving out how they made their computers with the network ports. So, for instance, Lenovo's network port looked nothing like HP's network port. Even the wires needed by different companies were different. So 2 computers from different manufacturers could NOT talk to each other. To solve this, ISO (International Organization for Standardization: ISO is not an acronym, it's a Greek word meaning 'Equal') created a standard 'recipe' to create the networking component of computers. More about ISO <a href="https://byjus.com/full-form/iso-full-form/#:~:text=The%20full%20form%20of%20ISO%20is%20the%20International%20Organization%20for,purposes%20and%20publishes%20technical%20reports.">here</a><br>
+                Thanks to ISO, today we have these big companies - HP, Lenovo, Asus, but they all communicate (network) using the same ethernet cables. Wondering how the grep my email goes through a flippin wire to another computer? Check out my blog on the TCP/IP (and OSI) model.
+             </p>
+             
+             <p>
+                Great, now 2 computers can communicate with each other. But what if a third computer wants to join the conversation? The ethernet ports on both computers are busy talking to each other (one ethernet cable is connecting the ports on both computers). Now how do we get the third one into the conversation? Do we create a new computer with 2 ethernet ports? But there's only so many ports we can engineer into a computer before we run out of space, and increase production costs of computer exponentially. So how do we make more than 2 computers talk (network)?<br>
+                This is where the 'Switch' comes in. 
+             </p>
+
+
+	<h3>What is a switch?</h3>        
+             <p>
+                Switch is a device which connects multiple computers in a network. A switch has multiple ethernet outlets (ports). You know how a multi-socket extension cord converts one power socket into many? Well swtich does exactly the same (see image below.) 
+             </p>
+             <br>
+             <span>
+             <img class="inline" src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Multi-socket%20extension%20cord.jpg" alt="Extension Cord" style="height:200px;">
+             <img class="inline" src="https://raw.githubusercontent.com/Naman-Pal/aboutme/main/images/Network%20Switch%20Small.jpg" alt="Network Switch" style="height:200px;">
+             </span>
+             
+             <p>
+                To be fair, the switch is a little more than just a ethernet port extension. If there are 5 computers connected to same switch, the switch knows which computer sent the data, and which computer should receive it; unlike a power cord which sends the same power to each port. Want to know how does switch know where to send the data to? Check out my TCP/IP (and OSI) blog post. 
+             </p>
+
+             <p>
+                Nice, so we are able to connect multiple computers together. 
+
+    </div>
+    
+    <footer id="contact" style="background-color: #1c2e4a; padding: 20px; color: #FAC898; text-align: center;">
+        <div style="margin-bottom: 20px;">
+            <a href="mailto:nptgshiv@gmail.com" title="Email" style="font-size: 24px; color: #FAC898; text-decoration: none; margin-right: 20px;"><i class="far fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/n-pal/" target="_blank" title="LinkedIn" style="font-size: 24px; color: #FAC898; text-decoration: none; margin-right: 20px;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Naman-Pal" target="_blank" title="GitHub" style="font-size: 24px; color: #FAC898; text-decoration: none;"><i class="fab fa-github"></i></a>
+        </div>
+        <p style="font-size: 18px; margin-top: 20px;">Contact: <a href="mailto:nptgshiv@gmail.com" style="color: #FAC898; text-decoration: none;">Email</a> | <a href="https://www.linkedin.com/in/n-pal/" target="_blank" style="color: #FAC898; text-decoration: none;">LinkedIn</a> | <a href="https://github.com/Naman-Pal" target="_blank" style="color: #FAC898; text-decoration: none;">GitHub</a></p>
+        <p style="font-size: 14px; margin-top: 20px;">&copy; 2024 Naman Pal</p>
+    </footer>
+</body>
+</html>
