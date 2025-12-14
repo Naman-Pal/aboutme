@@ -272,33 +272,36 @@
 
     <div class="container">
             <p>
-                For simplicity, consider this scenario: email, social media etc. don't exist, and you want to share a file with a coworker; what do you do?<br>
-                You probably copy it to a USB, plug the USB into the coworker's computer, and paste it there. 
-                3 minutes later, another file comes to you which you want to share with the same coworker. USB again? 7 minutes later, another file. You know what I'm getting at?    
+                Internet intrigues me. It reminds me what humanity is capable of. How much we can build, do, in such a small time-frame: given we work together and have the resources to do it. 
+<br>
+                Okay, philosophy aside, here's how we actually did it. In the mid-20th century, scientists and researchers needed better ways to do calculations. Because before computers humans were doing all that, increasing the likelyhood of errors, and delaying even simple projects.    
              </p>
 
              <p>
-                For this reason, we need a way to communicate with other computers efficiently. With the internet being an integral part of our society now, it's hard to imagine a world without network today. But what I mentioned above is the boiled down version of why we need to connect computers (network). That's literally what a network is, connection of computers. 
-             </p>
-                
-             <p>
-                So we came up with a solution. We created computers which have a port. When we plug one end of a wire into that port and plug the other end into another computer's port, we're able to send and receive files between the computers! This port is called Ethernet-Port and the wire is... (c'mon you know it :)
+
+                While the rest of the world was in chaos, US back then was relatively stable and had WAY more resources to fund everything. Also, chaotic world war and cold war times, they NEEDED to be ahead of the others. So that's what they did. 
+They mega funded computing machines that could reliably handle complex calculations, research, and analysis. ENIAC and UNIVAC being one of the first ever 'real' computers. They came with their own basic 'OS' and were sold to public, often interesting other public and private sectors like research, engineering, government, etc. because this would make their work SO much easier.
+                 
              </p>
              
              <p>
-                You know how Coca-Cola has a secret 'recipe' that they have preserved in their headquarters somewhere (even tho we all know it's just a brown colored, carbonated sugar solution.) Well the computer manufacturers back then were also not giving out how they made their computers with the network ports. So, for instance, Lenovo's network port looked nothing like HP's network port. Even the wires needed by different companies were different. So 2 computers from different manufacturers could NOT talk to each other. To solve this, ISO (International Organization for Standardization: ISO is not an acronym, it's a Greek word meaning 'Equal') created a standard 'recipe' to create the networking component of computers. More about ISO <a href="https://byjus.com/full-form/iso-full-form/#:~:text=The%20full%20form%20of%20ISO%20is%20the%20International%20Organization%20for,purposes%20and%20publishes%20technical%20reports.">here</a><br>
-                Thanks to ISO, today we have these big companies - HP, Lenovo, Asus, but they all communicate (network) using the same ethernet cables. Wondering how the grep my email goes through a flippin wire to another computer? Check out my blog on the TCP/IP (and OSI) model.
-             </p>
-             
+                *Fun fact: Semiconductor technology, which is essential for the logic and memory elements in computers, only came out in the 60s-70s. So early computers of 40s-50s like ENIAC/UNIVAC used older logic/memory technologies like vacuum tubes, mercury delay lines/magnetic drums, which took up entire rooms. With the advent and progress of semiconductor technologies, computers became more and more efficient, and took less and less space, basically they just got better and better. We'll soon have quantum computers, which will have the power to manipulate bits, which would make the first 'real' supercomputers.
+
+	     </p>
              <p>
-                Great, now 2 computers can communicate with each other. But what if a third computer wants to join the conversation? The ethernet ports on both computers are busy talking to each other (one ethernet cable is connecting the ports on both computers). Now how do we get the third one into the conversation? Do we create a new computer with 2 ethernet ports? But there's only so many ports we can engineer into a computer before we run out of space, and increase production costs of computer exponentially. So how do we make more than 2 computers talk (network)?<br>
-                This is where the 'Switch' comes in. 
+                At this point, people were already working sort of remotely. Like not from home, but sitting in different room than the actual computer. That's because these computers were too expensive to build for every single scientist to work on. So they built one per institution. And all scientists would have user accounts on the same computer. The computer was big, loud, and very expensive to maintain. So it was placed in a special, high-maintenance room, while terminals were setup in scientists' offices, connected to the mainframe via phone lines. Scientists communicated with the mainframe by using teletype, meaning, their input was converted to ASCII and sent to mainframe, and vice versa. ASCII was transmitted over phone lines using varying voltages. Back then it was all CLI. Eventually these computers 
+ 
              </p>
 
 
-	<h3>What is a switch?</h3>        
+	<h3>So where does the Internet come into picture?</h3>        
              <p>
-                Switch is a device which connects multiple computers in a network. A switch has multiple ethernet outlets (ports). You know how a multi-socket extension cord converts one power socket into many? Well swtich does exactly the same (see image below.) 
+                Although these 'computing' machineswere a big step-up from the human-conducted calculations, people back then were still reluctant to mail their researches to other universities/scientists, or recite their findings over those phones, you know the ones where we stick our finger in and spin it round and round, and the phone goes 'tring tring'... you get the picture.
+ 
+             </p>
+             <p>
+                And this is exactly when Internet version 1.0 was born, the 'ARPANET'. The researchers came up with a pre-historic OSI model, where data would be broken into sort-of packets, and have sort-of headers attached for efficient routing and minimal data loss - a level up from sending serial ASCII over phone lines. They created early-routers called 'IMPs' that routed packets similar to how our routers do today.
+
              </p>
              <br>
              <span>
@@ -307,11 +310,16 @@
              </span>
              
              <p>
-                To be fair, the switch is a little more than just a ethernet port extension. If there are 5 computers connected to same switch, the switch knows which computer sent the data, and which computer should receive it; unlike a power cord which sends the same power to each port. Want to know how does switch know where to send the data to? Check out my TCP/IP (and OSI) blog post. 
-             </p>
+                They knew just transmitting the data as serial signals over long distances (different cities) would cause data loss, and delays. Hence, they also designed hardware and software which would break down data from one computer into packets with headers so it can be routed appropriately. 
 
-             <p>
-                Nice, so we are able to connect multiple computers together. 
+At first, this expensive infrastructure was only setup in 4-5 universities, so there were only 4-5 network nodes. They leased phone lines to connect the nodes in ARPANET. These universities were finally able to communicate without mailing each other papers.
+
+Eventually, more and more universities were added to the ARPANET. Copying ARPANET, others, like private telecom companies, government departments, etc. also created their networks. They were all using similar hardware and software. But they had their own routing protocols. Meaning packets coming out of one network were not intelligible to others. This was soon solved when TCP/IP came out. It standardized how data was routed, so different networks could now talk with each other. Eventually, more and more nodes/small networks joined. 
+
+Point to note: these were PRIVATE networks. Meaning, even if you connected to any of these networks using a computer, you still required an account, and permissions from that network's admin to send or receive anything. TCP/IP only standardized how to send-receive raw data. Whether they actually could depended on whether they were allowed to. 
+
+ 
+             </p>
 
     </div>
     
