@@ -2,7 +2,7 @@
 ###### My personal website — what I'm building, what inspires me, and more! 
 
 ## The 'About' page
-<img width="464" height="267" alt="image" src="https://github.com/user-attachments/assets/9dd47e93-86f3-4f42-9741-c760a7f20aab" />
+<img width="1172" height="299" alt="image" src="https://github.com/user-attachments/assets/1f2d8193-e07e-4421-8307-80fdd5a0ff5d" />
 <br>
 <br>
 Highlights what excites me, key accomplishments, and background. 
