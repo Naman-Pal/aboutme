@@ -5,7 +5,7 @@
 <img width="1172" height="299" alt="image" src="https://github.com/user-attachments/assets/1f2d8193-e07e-4421-8307-80fdd5a0ff5d" />
 <br>
 <br>
-Highlights what excites me, key accomplishments, and background. 
+Highlights what excites me and my vision. 
 <br>
 <br>
 <br>
